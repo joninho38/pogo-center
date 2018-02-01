@@ -10,7 +10,7 @@ exports.up = function(knex, Promise) {
 	t.string('raid_pokemon_move_1')
 	t.string('raid_pokemon_move_2')
 	t.string('raid_pokemon_name')
-	t.integer('gym_id').references('id').inTable('gym')
+	t.integer('gym_id').unsigned().references('id').inTable('gym')
     t.timestamps(false, true)
   })
 };
