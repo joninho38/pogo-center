@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     t.string('latitude').notNullable()
 	t.string('longitude').notNullable()
 	t.boolean('sponsor')
-	t.string('team_id')
+	t.integer('team_id')
 	t.integer('slots_available')
     t.timestamps(false, true)
   }) 
