@@ -57,7 +57,7 @@
 
             _.forEach(cronRecord, function(taskDefinition, taskName){
                 // check if the task is due
-                if(taskDefinition.lastrun === null || _checkIfTaskIsDue(taskDefinition, now){
+                if(taskDefinition.lastrun === null || _checkIfTaskIsDue(taskDefinition, now)){
                     scheduledTasks.push(
                         function(asyncCallback){
                             taskDefinition.task(asyncCallback);
