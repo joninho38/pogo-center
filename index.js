@@ -15,5 +15,5 @@ app.post('/createUser', (req, res) => {
 })
 app.listen(7555, () => {
   console.log('Server running on http://localhost:7555')
-  cron.addTask("Gym update cron", computeGyms, 300);
+  cron.addTask("Gym update cron", cron.computeGyms, 300);
 })
