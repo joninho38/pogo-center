@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const store = require('./store')
+const cron = require('./cron')
 const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.json())
@@ -14,5 +15,5 @@ app.post('/createUser', (req, res) => {
 })
 app.listen(7555, () => {
   console.log('Server running on http://localhost:7555')
-  Cron.addTask("Gym update cron", computeGyms, 300);
+  cron.addTask("Gym update cron", computeGyms, 300);
 })

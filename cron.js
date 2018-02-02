@@ -18,7 +18,7 @@
 
     var cronRecord = {};
 	
-    var Cron = {
+    var cron = {
         addTask: function(taskName, task, frequency){
             var lastrun = null;
             //
