@@ -1,5 +1,5 @@
 const knex = require('knex')(require('./knexfile'));
-var unirest = require('unirest')(require('./unirest'));
+const unirest = require('unirest');
 
 var pokemon = false;
 var lastpokemon = false;

@@ -16,7 +16,7 @@ app.post('/createUser', (req, res) => {
 })
 app.get('/updateGym', (req, res) => {
   gym
-    .updateGym({token: req.body.token})
+    .updateGym({token: req.query.token})
     .then(() => res.sendStatus(200))
 })
 app.listen(7555, () => {

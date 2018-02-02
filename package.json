@@ -9,10 +9,12 @@
   "author": "joninho",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "knex": "^0.14.2",
     "mysql": "^2.15.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "unirest": "^0.5.1"
   }
 }
