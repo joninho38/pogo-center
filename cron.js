@@ -32,7 +32,7 @@
             //
             if(_.contains(Object.keys(cronRecord), taskName)){
                 // get the last time the task was run
-                lastrun = cronRecord[taskName]lastrun;
+                lastrun = cronRecord[taskName].lastrun;
             }
 
             cronRecord[taskName] = {
