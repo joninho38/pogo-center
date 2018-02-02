@@ -97,5 +97,5 @@
                 // return false otherwise
                 return false;   
             }
-        }),
+        },
     };
