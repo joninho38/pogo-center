@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const store = require('./store')
+const gym = require('./gyms')
 const cron = require('./cron')
 const app = express()
 app.use(express.static('public'))
@@ -13,7 +14,12 @@ app.post('/createUser', (req, res) => {
     })
     .then(() => res.sendStatus(200))
 })
+app.get('/updateGym', (req, res) => {
+  gym
+    .updateGym({token: req.body.token})
+    .then(() => res.sendStatus(200))
+})
 app.listen(7555, () => {
   console.log('Server running on http://localhost:7555')
-  cron.addTask("Gym update cron", cron.computeGyms, 300);
+  // cron.addTask("Gym update cron", cron.computeGyms, 300);
 })
