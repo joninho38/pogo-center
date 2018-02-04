@@ -1,5 +1,7 @@
 const knex = require('knex')(require('./knexfile'));
 const unirest = require('unirest');
+var querystring = require('querystring');
+var request = require('request');
 
 var pokemon = "false";
 var lastpokemon = "false";
@@ -56,6 +58,41 @@ module.exports = {
 	.end(function (response) {
 	  console.log(response.body);
 	});
+	
+	
+	// Second way
+	var form = {
+    gyms: gyms,
+    lastgyms: lastgyms,
+    swLat: swLat,
+    swLng: swLng,
+    neLat: neLat,
+    neLng: neLng,
+    oSwLat: oSwLat,
+    oSwLng: oSwLng,
+    oNeLat: oNeLat,
+    oNeLng: oNeLng,
+    token: token,
+    ville: ville,
+    timestamp: Date.now()
+	};
+
+	var formData = querystring.stringify(form);
+	var contentLength = formData.length;
+
+	request({
+		headers: {
+      'Content-Length': contentLength,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    uri: 'https://www.livepokemap.fr/raw_data',
+    body: formData,
+    method: 'POST'
+	  }, function (err, res, body) {
+		  console.log("Second way : ");
+		  console.log(response.body);
+	  });
+	
     return Promise.resolve()
   }
 }
