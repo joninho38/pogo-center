@@ -88,9 +88,9 @@ module.exports = {
     uri: 'https://www.livepokemap.fr/raw_data',
     body: formData,
     method: 'POST'
-	  }, function (err, res, body) {
+	  }, function (err, response, body) {
 		  console.log("Second way : ");
-		  console.log(response.body);
+		  console.log(body);
 	  });
 	
     return Promise.resolve()
