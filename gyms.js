@@ -27,7 +27,7 @@ var ville = "LYON";
 module.exports = {
   updateGym ({token}) {
     console.log(`Récupération des informations des arènes`)
-	unirest.get('https://www.livepokemap.fr/raw_data')
+	unirest.post('https://www.livepokemap.fr/raw_data')
 	.headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
 	.send({ "pokemon": pokemon })
 	.send({ "lastpokemon": lastpokemon })
