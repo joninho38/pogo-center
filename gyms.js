@@ -1,17 +1,17 @@
 const knex = require('knex')(require('./knexfile'));
 const unirest = require('unirest');
 
-var pokemon = false;
-var lastpokemon = false;
-var pokestops = false;
-var lastpokestops = false;
-var luredonly = false;
-var gyms = true;
-var lastgyms = true;
-var scanned = false;
-var lastslocs = false;
-var spawnpoints = false;
-var lastsspawns = false;
+var pokemon = "false";
+var lastpokemon = "false";
+var pokestops = "false";
+var lastpokestops = "false";
+var luredonly = "false";
+var gyms = "true";
+var lastgyms = "true";
+var scanned = "false";
+var lastslocs = "false";
+var spawnpoints = "false";
+var lastsspawns = "false";
 var swLat = "45.64626048919313";
 var swLng = "4.588541994043908";
 var neLat = "45.858985911056486";
@@ -28,7 +28,7 @@ module.exports = {
   updateGym ({token}) {
     console.log(`Récupération des informations des arènes`)
 	unirest.post('https://www.livepokemap.fr/raw_data')
-	.headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+//	.headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
 	.send({ "pokemon": pokemon })
 	.send({ "lastpokemon": lastpokemon })
 	.send({ "pokestops": pokestops })
